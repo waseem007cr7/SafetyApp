@@ -1,15 +1,19 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import moduleName from '../screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import ContactInfoScreen from '../screens/ContactInfoScreen';
 
 const Stack = createStackNavigator();
+
 
 const AppStack = () => {
     return(
         <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Contact" component={ContactInfoScreen} />
+            <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
     );
 }
-
 export default AppStack;

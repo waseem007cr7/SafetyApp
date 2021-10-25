@@ -4,12 +4,14 @@ import {useEffect} from 'react';
 //import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {View} from 'react-native';
+// import {View} from 'react-native';
 import OnBoardingScreen from '../screens/OnBoardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
+// import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,9 @@ const AuthStack = () => {
       } else {
         setFirstLaunch(false);
       }
+    });
+    GoogleSignin.configure({
+      webClientId: '98431245381-d6093sv1tfmcob44gic3l7dvgrm57vbj.apps.googleusercontent.com',
     });
   }, []);
 

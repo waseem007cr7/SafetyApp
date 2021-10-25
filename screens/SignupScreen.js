@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {View, Text, Button, TouchableOpacity, Image, StyleSheet} from 'react-native';
 
 import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
 import SocialButton from '../components/SocialButton';
+import { AuthContext } from '../navigation/AuthProvider';
 
 // import { auth } from '../firebase';
 
@@ -12,6 +13,8 @@ const SignupScreen = ({navigation}) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [confirmpassword, setConfirmPassword] = useState();
+
+    const { register } = useContext(AuthContext);
 
     // const handleSignUp = () => {
     //     auth
@@ -44,7 +47,7 @@ const SignupScreen = ({navigation}) => {
                 secureTextEntry={true}
             />
 
-<FormInput
+            <FormInput
                 labelValue={confirmpassword}
                 onChangeText={(userPassword)=> setConfirmPassword(userPassword)}
                 placeholderText='Confirm Password'
@@ -54,7 +57,7 @@ const SignupScreen = ({navigation}) => {
 
             <FormButton
                 buttonTitle="Sign Up"
-                onPress={handleSignUp}
+                onPress={() => register(email, password)}
             />
 
             <View style={styles.textPrivate}>
@@ -66,21 +69,25 @@ const SignupScreen = ({navigation}) => {
                 <Text style={styles.color_textPrivate, {color: '#e88832'}}>Privacy Policy</Text>
             </View>
 
-            <SocialButton
-                buttonTitle="Sign Up With Facebook"
-                btnType='facebook'
-                color='#4867aa'
-                backgroundColor='#e6eaf4'
-                onPress={()=> {}}
-            />
-
-            <SocialButton
-                buttonTitle="Sign Up With Google"
-                btnType='google'
-                color='#de4d41'
-                backgroundColor='#f5e7ea'
-                onPress={()=> {}}
-            />
+            { Platform.OS === 'android' ? (
+              <View>
+                {/* <SocialButton
+                    buttonTitle="Sign In With Facebook"
+                    btnType='facebook'
+                    color='#4867aa'
+                    backgroundColor='#e6eaf4'
+                    onPress={()=> {}}
+                /> */}
+    
+                <SocialButton
+                    buttonTitle="Sign Up With Google"
+                    btnType='google'
+                    color='#de4d41'
+                    backgroundColor='#f5e7ea'
+                    onPress={()=> {}}
+                />
+              </View>
+            ) : null}
 
             <TouchableOpacity style={styles.navButton} onPress={()=> navigation.navigate('Login')}>
                 <Text style={styles.navButtonText}>Have An Account? Sign In</Text>

@@ -20,6 +20,8 @@ target 'SafteyApp' do
 
   pod 'RNFBAuth', :path => '../node_modules/@react-native-firebase/auth'
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'SafteyAppTests' do
     inherit! :complete
     # Pods for testing

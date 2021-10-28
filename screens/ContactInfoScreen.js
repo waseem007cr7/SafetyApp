@@ -33,8 +33,8 @@ const ContactInfoScreen = () => {
               <View>
                 <SocialButton
                     buttonTitle="Submit Contact Info"
-                    color='#4867aa'
-                    backgroundColor='#e6eaf4'
+                    color='#7209b7'
+                    backgroundColor='#bdb2ff'
                     onPress={()=> {}}
                 />
               </View>

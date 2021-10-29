@@ -43,7 +43,7 @@ const LoginScreen = ({navigation}) => {
                 source={require('../assets/safety-logo.png')}
                 style={styles.logo}
             />
-            <Text style={styles.text}>Saftey App</Text>
+            <Text style={styles.text}>Safety App</Text>
             <FormInput
                 labelValue={email}
                 onChangeText={(userEmail)=> setEmail(userEmail)}

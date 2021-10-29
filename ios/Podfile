@@ -22,6 +22,8 @@ target 'SafteyApp' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'RNBoundary', :path => '../node_modules/react-native-boundary'
+
   target 'SafteyAppTests' do
     inherit! :complete
     # Pods for testing

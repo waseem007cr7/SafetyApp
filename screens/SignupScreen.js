@@ -28,6 +28,10 @@ const SignupScreen = ({navigation}) => {
 
     return(
         <View style={styles.container}>
+            <Image
+                  source={require('../assets/account.png')}
+                  style={styles.logo}
+              />
             <Text style={styles.text}>Create An Account</Text>
             <FormInput
                 labelValue={email}
@@ -105,6 +109,12 @@ const styles = StyleSheet.create({
       padding: 20,
       paddingTop: 50
     },
+    logo: {
+      height: 150,
+      width: 150,
+      resizeMode: 'center',
+      marginBottom: 10
+    },
     text: {
       fontFamily: 'Kufam-SemiBoldItalic',
       fontSize: 28,
@@ -123,7 +133,7 @@ const styles = StyleSheet.create({
     textPrivate: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginVertical: 35,
+        marginVertical: 20,
         justifyContent: 'center',
       },
       color_textPrivate: {

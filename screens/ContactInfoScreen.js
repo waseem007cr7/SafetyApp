@@ -14,20 +14,20 @@ const ContactInfoScreen = () => {
                 style={styles.logo}
             />
             <Text style={styles.textlogo}>Emerency Contacts</Text>
-            <Text style={styles.text}>1st Contact</Text>
+            {/* <Text style={styles.text}>1st Contact</Text> */}
             <FormInput
                 placeholderText='Enter First Conatct'
                 iconType='contacts'
                 
             />
-            <Text style={styles.text}>2nd Contact</Text>
+            {/* <Text style={styles.text}>2nd Contact</Text> */}
             <FormInput
                 placeholderText='Enter Second Conatct'
                 iconType='contacts'
             />
-            <Text style={styles.text}>3rd Contact</Text>
+            {/* <Text style={styles.text}>3rd Contact</Text> */}
             <FormInput
-                placeholderText='Enter Third Conatct'
+                placeholderText='Enter Third Conatct (optional)'
                 iconType='contacts'
             />
               <View>

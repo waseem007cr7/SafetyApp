@@ -1,3 +1,4 @@
+// import com.eddieowens.RNBoundaryPackage;
 package com.safteyapp;
 
 import com.facebook.react.ReactActivity;

@@ -35,7 +35,7 @@ export const AuthProvider = ({children}) => {
         },
         register: async (email, password) => {
           try {
-            await auth().createUserWithEmailAndPassword(email, password);
+            await auth().createUserWithEmailAndPassword(email, password)
           } catch (e) {
             console.log(e);
           }

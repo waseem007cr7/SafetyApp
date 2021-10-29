@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
 import {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 // import FormButton from '../components/FormButton';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, {Circle, PROVIDER_GOOGLE} from 'react-native-maps';
 import {Marker} from 'react-native-maps';
+
 
 export default class HomeScreen extends Component {
   state = {
@@ -12,7 +13,7 @@ export default class HomeScreen extends Component {
       longitude: 67.07325196870403,
     },
      
-    marginBottom: 1,
+    // marginBottom: 1,
   };
 
   render() {
@@ -29,18 +30,18 @@ export default class HomeScreen extends Component {
             latitudeDelta: 0.015,
             longitudeDelta: 0.0121,
           }}
-          showsUserLocation
+          showsUserLocation={true}
           showsMyLocationButton={true}
           onPress={e => {
             this.setState({
               coordinate: e.nativeEvent.coordinate,
             });
           }}
-          onRegionChangeComplete={(region) =>
-            this.setState({
-              coordinate: region,
-            })
-          }
+          // onRegionChangeComplete={(region) =>
+          //   this.setState({
+          //     coordinate: region,
+          //   })
+          // }
           onMapReady={() => {
             this.setState({marginBottom: 0});
           }}>
@@ -51,7 +52,13 @@ export default class HomeScreen extends Component {
             }}
             // title={marker.title}
             // description={marker.description}
-          />
+          >
+          </Marker>
+          <Circle
+              center={this.state.coordinate}
+              radius = {200}
+              fillColor = 'rgba(255, 172, 129, 0.3)'
+            />
         </MapView>
       </View>
     );

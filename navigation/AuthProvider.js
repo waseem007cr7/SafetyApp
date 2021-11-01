@@ -17,6 +17,7 @@ export const AuthProvider = ({children}) => {
             await auth().signInWithEmailAndPassword(email, password);
           } catch (e) {
             console.log(e);
+            Alert.alert(e);
           }
         },
         googleLogin: async () => {
@@ -31,6 +32,7 @@ export const AuthProvider = ({children}) => {
             await auth().signInWithCredential(googleCredential);
             }catch(error) {
               console.log({error});
+              Alert.alert({error});
             }
         },
         register: async (email, password) => {
@@ -38,6 +40,7 @@ export const AuthProvider = ({children}) => {
             await auth().createUserWithEmailAndPassword(email, password)
           } catch (e) {
             console.log(e);
+            Alert.alert(e);
           }
         },
 
@@ -46,6 +49,7 @@ export const AuthProvider = ({children}) => {
             await auth().signOut();
           } catch (e) {
             console.log(e);
+            Alert.alert(e);
           }
         },
       }}>

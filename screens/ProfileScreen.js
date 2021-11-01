@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 // import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
 import SocialButton from '../components/SocialButton';
 import { AuthContext } from '../navigation/AuthProvider';
+// import * as firebase from 'firebase';
 
 const ProfileScreen = () => {
 
-    const {user, logout} = useContext(AuthContext);
+  const {user, logout} = useContext(AuthContext);
+    
     return(
         <View style={styles.container}>
             <Image
@@ -25,6 +27,12 @@ const ProfileScreen = () => {
             />
             {/* <Text style={styles.text}>2nd Contact</Text> */}
             <FormInput
+                placeholderText='Enter Your Current Password'
+                iconType='lock'
+                secureTextEntry={true}
+                // value={this.state.newPassword}
+            />
+            <FormInput
                 placeholderText='Enter Your New Password'
                 iconType='lock'
                 secureTextEntry={true}
@@ -34,7 +42,7 @@ const ProfileScreen = () => {
                         buttonTitle="Update Profile"
                         color='#7209b7'
                         backgroundColor='#bdb2ff'
-                        onPress={() => {}}
+                        onPress={() => {changeEmail, changePassword}}
                     />
                 <SocialButton
                     buttonTitle="Logout"

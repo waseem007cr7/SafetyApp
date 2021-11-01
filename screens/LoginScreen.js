@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, Image, StyleSheet, Platform} from 'react-n
 // import { useEffect } from 'react/cjs/react.development';
 // import HomeScreen from '../screens/HomeScreen';
 
+// import {ForgotPassword} from './ForgotPassword';
 import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
 import SocialButton from '../components/SocialButton';
@@ -67,7 +68,7 @@ const LoginScreen = ({navigation}) => {
                 onPress={()=> login(email, password)}
             />
 
-            <TouchableOpacity style={styles.forgotButton} onPress={()=> {}}>
+            <TouchableOpacity style={styles.forgotButton} onPress={()=> navigation.navigate('ForgotPass') }>
                 <Text style={styles.navButtonText}>Forgot Password?</Text>
             </TouchableOpacity>
 

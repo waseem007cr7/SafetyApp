@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import OnBoardingScreen from '../screens/OnBoardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
+import ForgotPassword from '../screens/ForgotPassword';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
@@ -52,6 +53,11 @@ const AuthStack = () => {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
+        options={{header: () => null}}
+      />
+      <Stack.Screen
+        name="ForgotPass"
+        component={ForgotPassword}
         options={{header: () => null}}
       />
       <Stack.Screen
